@@ -1,21 +1,16 @@
 import sys
 
-try:
-    print('Weight:', float(sys.argv[1]), 'kg')
-    print('Height:', float(sys.argv[2]), 'm')
-except ValueError:
-    print('One or more of the values you entered were not numbers.')
-
 
 def main():
     try:
         weight = float(sys.argv[1])
-    except ValueError:
-        print('The weight value you inputed is not a number.')
-    try:
         height = float(sys.argv[2])
+        print('Weight:', weight, 'kg')
+        print('Height:', height, 'm')
     except ValueError:
-        print('The height value you inputed is not a number.')
+        print('One or more of the values you entered were not numbers.')
+        return 0
+
     body_mass_index = calculate_body_mass_index(weight, height)
     print('BMI:', round(body_mass_index, 1))
 
